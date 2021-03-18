@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class zombie : MonoBehaviour
 {
+    public GameObject saliva;
     public Rigidbody2D rb;
     private Animator anim;
+    public Rigidbody2D srb;
+    public GameObject ThrowFrom;
+    bool Throwing = false;
+    bool IsThrowing;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +25,7 @@ public class zombie : MonoBehaviour
     {
         Walk();
         Throw();
+        Projectile();
     }
 
 
@@ -52,6 +59,7 @@ public class zombie : MonoBehaviour
         else
         {
             anim.SetBool("IsWalking", true);
+
         }
     }
     void Throw()
@@ -66,7 +74,27 @@ public class zombie : MonoBehaviour
         }
 
     }
+    void Projectile()
+    {
+        Throw();
+        IsThrowing = anim.GetBool("IsThrowing");
+            if (IsThrowing == true) 
+        {
+            Throwing = true;
+        }
+        
 
+        
+        if (Throwing == true)
+        {
+            float sxv = 1000f;
+            print("throwing");
+            GameObject salivaInstance = Instantiate(saliva, ThrowFrom.transform.position, ThrowFrom.transform.rotation) as GameObject;
+            salivaInstance.GetComponent<Rigidbody2D>().AddForce(transform.right * sxv);
+            Throwing = false; 
+        }
+
+    }
 
 
 }

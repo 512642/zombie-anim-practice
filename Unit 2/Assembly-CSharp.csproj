@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\zombie.cs" />
+    <Compile Include="Assets\footsteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -604,6 +605,12 @@
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.IK.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.IK.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -654,12 +661,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.IK.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.IK.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
